@@ -2,21 +2,33 @@
     return a + b;
 }
 */
-function FizzBuzz(numero){
-        if( numero % 3 === 0 && numero % 5 === 0){
-            return "FizzBuzz";
+function FizzBuzz(){
+    let resultado =" ";
+    for(let i=1; i <=100; i++){
+       
+        if( i % 3 === 0 && i % 5 === 0){
+            resultado += "FizzBuzz\n";
+            
         }
-        else if ( numero % 3 === 0){
-            return "Fizz";
+        else if ( i % 3 === 0){
+            resultado += "Fizz\n";
+            
         }
-        else if ( numero % 5 === 0){
-            return "Buzz";
+        else if ( i % 5 === 0){
+            resultado +="Buzz\n";
+           
         }
         else {
-            return numero;
+            resultado += i+"\n";
+            
         }
+        
     }
-
-
+    console.log(resultado);
+    return resultado;
+   
+}
+let resultado = FizzBuzz();
 module.exports = FizzBuzz;
+
 

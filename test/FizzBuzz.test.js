@@ -10,23 +10,26 @@ describe('FizzBuzz', () => {
 const FizzBuzz = require('../src/scripts/FizzBuzz');
 
 describe ("Kata Fizzbuzz", () => {
+    const resultado=FizzBuzz();
+    test('Devuelve el número sino es múltiplo de 3 ni de 5', ()=>{
+        const num = resultado.split("\n").map(Number);
+        expect(num.length).toBe(101);
+    })
+
     test('Devuelve "FizzBuzz" al ser múltiplo de 3 y de 5', ()=>{
         
-        expect(FizzBuzz(15)).toBe("FizzBuzz");
+        expect(resultado.split("\n")[14]).toBe("FizzBuzz");
     })
  
     test('Devuelve "Fizz" al ser múltiplo de 3', ()=>{
         
-        expect(FizzBuzz(6)).toBe("Fizz");
+        expect(resultado.split("\n")[2]).toBe("Fizz");
     })
 
     test('Devuelve "Buzz" al ser múltiplo de 5', ()=>{
-        
-        expect(FizzBuzz(10)).toBe("Buzz");
+    
+        expect(resultado.split("\n")[4]).toBe("Buzz");
     })
 
-    test('Devuelve el número sino es múltiplo de 3 ni de 5', ()=>{
-        
-        expect(FizzBuzz(2)).toBe(2);
-    })
+    
 })
